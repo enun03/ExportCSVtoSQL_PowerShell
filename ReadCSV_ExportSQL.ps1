@@ -28,10 +28,10 @@ foreach($item in $items) {
     #Building Query
     $cmd = $dbconn.CreateCommand()
     $query = "INSERT INTO Persons (Name, Last, Age) VALUES (@name, @last, @age)"
-    $cmd.CommandText = $query
     $cmd.Parameters.Add("@name", $Name) | Out-Null
     $cmd.Parameters.Add("@last", $Last) | Out-Null
     $cmd.Parameters.Add("@age", $Age) | Out-Null
+    $cmd.CommandText = $query
     
     #Exec Query
     $cmd.ExecuteNonQuery()
